@@ -6,7 +6,7 @@ const TextInputComponent = ({ title, image }) => {
     return (
         <View>
             <View style={styles.textInputContainer}>
-                <TextInput style={styles.textInput} value={title} />
+                <TextInput style={styles.textInput} placeholder={title} />
                 <Image style={styles.icon} source={image} />
             </View>
         </View>

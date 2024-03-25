@@ -3,31 +3,31 @@ import React from 'react'
 import { styles } from './style'
 import TextInputComponent from '../../components/atoms/textInput'
 import { Button } from '../../components'
+import { eyeIcon, logoRed, xIcon } from '../../assets'
 import { handleGoTo } from '../../utils'
-import { StackActions } from '@react-navigation/native'
 
-const Login = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
     return (
         <View style={styles.wrapper.container}>
             <View style={styles.logo.logoContainer}>
-                <Image style={styles.logo.img} source={require('../../assets/image/logoRed.png')} />
+                <Image style={styles.logo.img} source={logoRed} />
             </View>
             <View style={styles.textIput.textInputContainer}>
-                <TextInputComponent title="Username" image={require('../../assets/icon/xmark.png')} />
-                <TextInputComponent title="Password" image={require('../../assets/icon/eyemark.png')} />
+                <TextInputComponent title="Full Name" image={xIcon} />
+                <TextInputComponent title="Username" image={xIcon} />
+                <TextInputComponent title="Email" image={xIcon} />
+                <TextInputComponent title="Password" image={eyeIcon} />
             </View>
             <View>
-                <Button onPress={() => navigation.dispatch(StackActions.replace('Main'))} style={styles.button.btnLogin} styleText={styles.button.textBtnLogin} title="Login" />
+                <Button style={styles.button.btnLogin} styleText={styles.button.textBtnLogin} title="Sign Up" />
             </View>
             <View style={styles.text.textContainer}>
                 <Text style={styles.text.text1}>
-                    Don't have an account yet?
+                    Already have an account?
                 </Text>
-                <TouchableOpacity
-                    onPress={() => handleGoTo(navigation, 'SignUp')}
-                >
+                <TouchableOpacity onPress={() => handleGoTo(navigation, 'Login')}>
                     <Text style={styles.text.text2}>
-                        Sign up here
+                        Log in here
                     </Text>
                 </TouchableOpacity>
             </View>
@@ -35,5 +35,5 @@ const Login = ({ navigation }) => {
     )
 }
 
-export default Login
+export default SignUp
 

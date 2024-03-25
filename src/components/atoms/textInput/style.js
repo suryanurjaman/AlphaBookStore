@@ -12,8 +12,6 @@ export const styles = StyleSheet.create({
     },
     textInput: {
         flex: 1,
-        width: 308,
-        height: 60,
         paddingVertical: 20,
         paddingLeft: 30,
         paddingRight: 20,
